@@ -21,7 +21,6 @@ public class RadioTest {
 
     @Test
     public void nextTest() {
-//        Radio radio = new Radio();
         radio.stationNumber = 7;
         radio.next();
 
@@ -33,7 +32,6 @@ public class RadioTest {
 
     @Test
     public void nextTest1() {
-//        Radio radio = new Radio();
         radio.stationNumber = 9;
         radio.next();
 
@@ -45,7 +43,6 @@ public class RadioTest {
 
     @Test
     public void nextTest2() {
-//        Radio radio = new Radio();
         radio.stationNumber = 10;
         radio.next();
 
@@ -58,7 +55,6 @@ public class RadioTest {
 
     @Test
     public void prevTest() {
-//        Radio radio = new Radio();
         radio.stationNumber = 7;
         radio.prev();
 
@@ -70,7 +66,6 @@ public class RadioTest {
 
     @Test
     public void prevTest1() {
-//        Radio radio = new Radio();
         radio.stationNumber = 0;
         radio.prev();
 
@@ -82,7 +77,6 @@ public class RadioTest {
 
     @Test
     public void prevTest2() {
-//        Radio radio = new Radio();
         radio.stationNumber = 10;
         radio.prev();
 
@@ -94,7 +88,6 @@ public class RadioTest {
 
     @Test
     public void setStationNumberTest() {
-//        Radio radio = new Radio();
         radio.setStationNumber(7);
 
         int expected = 7;
@@ -105,7 +98,6 @@ public class RadioTest {
 
     @Test
     public void setStationNumberTest1() {
-//        Radio radio = new Radio();
         radio.setStationNumber(-1);
 
 
@@ -117,7 +109,6 @@ public class RadioTest {
 
     @Test
     public void setStationNumberTest2() {
-//        Radio radio = new Radio();
         radio.setStationNumber(15);
 
 
@@ -129,7 +120,6 @@ public class RadioTest {
 
     @Test
     public void increaseVolumeTest() {
-//        Radio radio = new Radio();
         radio.currentVolume = 90;
         radio.increaseVolume();
 
@@ -141,7 +131,6 @@ public class RadioTest {
 
     @Test
     public void increaseVolumeTest1() {
-//        Radio radio = new Radio();
         radio.currentVolume = 100;
         radio.increaseVolume();
 
@@ -153,7 +142,6 @@ public class RadioTest {
 
     @Test
     public void increaseVolumeTest2() {
-//        Radio radio = new Radio();
         radio.currentVolume = 101;
         radio.increaseVolume();
 
@@ -165,7 +153,6 @@ public class RadioTest {
 
     @Test
     public void decreaseVolumeTest() {
-//        Radio radio = new Radio();
         radio.currentVolume = 90;
         radio.decreaseVolume();
 
@@ -177,7 +164,6 @@ public class RadioTest {
 
     @Test
     public void decreaseVolumeTest1() {
-//        Radio radio = new Radio();
         radio.currentVolume = 0;
         radio.decreaseVolume();
 
@@ -189,7 +175,6 @@ public class RadioTest {
 
     @Test
     public void decreaseVolumeTest2() {
-//        Radio radio = new Radio();
         radio.currentVolume = -1;
         radio.decreaseVolume();
 
