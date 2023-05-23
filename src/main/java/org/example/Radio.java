@@ -3,28 +3,39 @@ package org.example;
 public class Radio {
     public int stationNumber;  // номер станции
     public int currentVolume = 0; //увеличение громкость
-//    public int decreaseVolume; //уменьшение громкости
+    private int stationCount;
+    private int defaultStationCount = 10;
 
-
+    public Radio () {
+        this.stationCount = defaultStationCount;
+    }
+    public Radio(int inputStationCount) {
+        if (inputStationCount > 0) {
+            this.stationCount = inputStationCount;
+        } else {
+            this.stationCount = defaultStationCount;
+        }
+    }
 
     public void next() {
-        if (stationNumber <= 9) {
+
+        if (stationNumber <= this.stationCount - 1) {
             stationNumber++;
         }
-        if (stationNumber > 9) {
+        if (stationNumber > this.stationCount - 1) {
             stationNumber = 0;
         }
     }
 
     public void prev() {
-        if (stationNumber <= 9) {
+        if (stationNumber <= this.stationCount - 1) {
             --stationNumber;
         }
-        if (stationNumber > 9) {
+        if (stationNumber > this.stationCount - 1) {
             stationNumber = 0;
         }
         if (stationNumber < 0) {
-            stationNumber = 9;
+            stationNumber = this.stationCount - 1;
         }
     }
 
@@ -32,12 +43,15 @@ public class Radio {
         if (stationNumber < 0) {
             return;
         }
-        if (stationNumber > 9) {
+        if (stationNumber > this.stationCount - 1) {
             return;
         }
         this.stationNumber = stationNumber;
     }
 
+    public int getStationCount() {
+        return this.stationCount;
+    }
 
 
     public void increaseVolume() {
@@ -59,32 +73,3 @@ public class Radio {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    public int getStationNumber() {
-//        return stationNumber;
-//    }
-//
-//    public void setStationNumber(int newStationNumber) {
-////        this.stationNumber = stationNumber;
-//        if (newStationNumber < 0) {
-//            return;
-//        }
-//        if (newStationNumber > 10) {
-//            return;
-//        }
-//        stationNumber = newStationNumber;
-//    }
