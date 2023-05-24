@@ -48,16 +48,3 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 }
-
-
-//
-//    public void setStationNumber(int newStationNumber) {
-////        this.stationNumber = stationNumber;
-//        if (newStationNumber < 0) {
-//            return;
-//        }
-//        if (newStationNumber > 10) {
-//            return;
-//        }
-//        stationNumber = newStationNumber;
-//    }
