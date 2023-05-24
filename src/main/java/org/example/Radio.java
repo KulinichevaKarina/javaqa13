@@ -1,82 +1,55 @@
 package org.example;
 
 public class Radio {
-    public int stationNumber;  // номер станции
-    public int currentVolume = 0; //увеличение громкость
-//    public int decreaseVolume; //уменьшение громкости
-
-
+    private int stationNumber;  // номер станции
+    private int currentVolume = 0; //увеличение громкость
 
     public void next() {
-        if (stationNumber <= 9) {
-            stationNumber++;
-        }
-        if (stationNumber > 9) {
-            stationNumber = 0;
-        }
+        setStationNumber(stationNumber + 1);
     }
 
     public void prev() {
-        if (stationNumber <= 9) {
-            --stationNumber;
-        }
-        if (stationNumber > 9) {
-            stationNumber = 0;
-        }
-        if (stationNumber < 0) {
-            stationNumber = 9;
-        }
+        setStationNumber(stationNumber - 1);
+    }
+
+    public void increaseVolume() {
+        this.setCurrentVolume(currentVolume + 1);
+    }
+
+    public void decreaseVolume() {
+      this.setCurrentVolume(currentVolume - 1);
+    }
+
+    public int getStationNumber() {
+        return stationNumber;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
     }
 
     public void setStationNumber(int stationNumber) {
         if (stationNumber < 0) {
-            return;
+            stationNumber = 9;
         }
         if (stationNumber > 9) {
-            return;
+            stationNumber = 0;
         }
         this.stationNumber = stationNumber;
     }
 
-
-
-    public void increaseVolume() {
-        if (currentVolume < 100) {
-            currentVolume++;
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
+            currentVolume = 0;
         }
         if (currentVolume > 100) {
             currentVolume = 100;
         }
-    }
-
-    public void decreaseVolume() {
-        if (currentVolume > 0) {
-            currentVolume--;
-        }
-        if (currentVolume < 0) {
-            currentVolume = 0;
-        }
+        this.currentVolume = currentVolume;
     }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//    public int getStationNumber() {
-//        return stationNumber;
-//    }
 //
 //    public void setStationNumber(int newStationNumber) {
 ////        this.stationNumber = stationNumber;
