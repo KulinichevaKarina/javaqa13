@@ -3,6 +3,19 @@ package org.example;
 public class Radio {
     private int stationNumber;  // номер станции
     private int currentVolume = 0; //увеличение громкость
+    private int stationCount;
+    private int defaultStationCount = 10;
+
+    public Radio () {
+        this.stationCount = defaultStationCount;
+    }
+    public Radio(int inputStationCount) {
+        if (inputStationCount > 0) {
+            this.stationCount = inputStationCount;
+        } else {
+            this.stationCount = defaultStationCount;
+        }
+    }
 
     public void next() {
         setStationNumber(stationNumber + 1);
@@ -28,11 +41,15 @@ public class Radio {
         return currentVolume;
     }
 
+    public int getStationCount() {
+        return this.stationCount;
+    }
+
     public void setStationNumber(int stationNumber) {
         if (stationNumber < 0) {
-            stationNumber = 9;
+            stationNumber = stationCount - 1;
         }
-        if (stationNumber > 9) {
+        if (stationNumber > stationCount - 1) {
             stationNumber = 0;
         }
         this.stationNumber = stationNumber;
