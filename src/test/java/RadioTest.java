@@ -6,7 +6,7 @@ public class RadioTest {
     Radio radio = new Radio();
 
     @Test
-    public void inputStationCountTest5() {
+    public void stationEnableTest() {
         Radio radio = new Radio(20);
         radio.setStationNumber(15);
 
