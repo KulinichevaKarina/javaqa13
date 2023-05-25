@@ -47,9 +47,9 @@ public class Radio {
 
     public void setStationNumber(int stationNumber) {
         if (stationNumber < 0) {
-            stationNumber = 9;
+            stationNumber = stationCount - 1;
         }
-        if (stationNumber > 9) {
+        if (stationNumber > stationCount - 1) {
             stationNumber = 0;
         }
         this.stationNumber = stationNumber;

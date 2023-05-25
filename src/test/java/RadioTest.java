@@ -6,6 +6,15 @@ public class RadioTest {
     Radio radio = new Radio();
 
     @Test
+    public void inputStationCountTest5() {
+        Radio radio = new Radio(20);
+        radio.setStationNumber(15);
+
+        Assertions.assertEquals(15, radio.getStationNumber());
+    }
+
+
+    @Test
     public void inputStationCountTest() {
         Radio radio = new Radio(15);
 
